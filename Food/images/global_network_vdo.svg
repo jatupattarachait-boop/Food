@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <radialGradient id="bg-glow" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#1a1c29" />
+      <stop offset="100%" stop-color="#08090c" />
+    </radialGradient>
+    <linearGradient id="neon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <linearGradient id="purple-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f857a6" />
+      <stop offset="100%" stop-color="#ff5858" />
+    </linearGradient>
+    <linearGradient id="play-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    
+    <!-- Glow Filters -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glass-filter">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg-glow)" />
+
+  <!-- Dotted Grid for Futuristic Feel -->
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity="0.07" />
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)" />
+
+  <!-- Global Connections Visualized -->
+  <!-- World Map Abstract Circles -->
+  <g opacity="0.15">
+    <circle cx="150" cy="180" r="40" fill="#ffffff" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 4" />
+    <circle cx="350" cy="280" r="60" fill="#ffffff" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 4" />
+    <circle cx="600" cy="150" r="50" fill="#ffffff" stroke="#ffffff" stroke-width="1" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- Network Connection Arcs -->
+  <path d="M 150 180 Q 375 80 600 150" fill="none" stroke="url(#neon-grad)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow-cyan)" stroke-dasharray="1000" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" values="1000;0" dur="4s" repeatCount="indefinite" />
+  </path>
+  <path d="M 150 180 Q 250 300 350 280" fill="none" stroke="url(#purple-pink)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow-pink)" stroke-dasharray="500" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" values="500;0" dur="3s" repeatCount="indefinite" />
+  </path>
+  <path d="M 350 280 Q 475 200 600 150" fill="none" stroke="url(#neon-grad)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow-cyan)" stroke-dasharray="500" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" values="500;0" dur="3.5s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Nodes (Cities/Chefs) -->
+  <!-- Node 1: New York -->
+  <g transform="translate(150, 180)">
+    <circle r="12" fill="#00f2fe" fill-opacity="0.2">
+      <animate attributeName="r" values="6;22;6" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle r="6" fill="#00f2fe" filter="url(#glow-cyan)" />
+    <text x="12" y="5" fill="#ffffff" font-family="'Courier New', monospace" font-size="10" font-weight="bold" opacity="0.8">NY_CHEF_NODE</text>
+  </g>
+
+  <!-- Node 2: London -->
+  <g transform="translate(350, 280)">
+    <circle r="16" fill="#f857a6" fill-opacity="0.2">
+      <animate attributeName="r" values="8;28;8" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle r="8" fill="#f857a6" filter="url(#glow-pink)" />
+    <text x="15" y="5" fill="#ffffff" font-family="'Courier New', monospace" font-size="10" font-weight="bold" opacity="0.8">LDN_CHEF_NODE</text>
+  </g>
+
+  <!-- Node 3: Tokyo -->
+  <g transform="translate(600, 150)">
+    <circle r="14" fill="#00f2fe" fill-opacity="0.2">
+      <animate attributeName="r" values="7;24;7" dur="2.2s" repeatCount="indefinite" />
+    </circle>
+    <circle r="7" fill="#00f2fe" filter="url(#glow-cyan)" />
+    <text x="12" y="5" fill="#ffffff" font-family="'Courier New', monospace" font-size="10" font-weight="bold" opacity="0.8">TKY_CHEF_NODE</text>
+  </g>
+
+  <!-- Interface Overlays -->
+  <rect x="20" y="20" width="160" height="45" rx="6" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" />
+  <text x="35" y="38" fill="#00f2fe" font-family="'Courier New', monospace" font-size="11" font-weight="bold">STATUS: CONNECTED</text>
+  <text x="35" y="53" fill="#ffffff" font-family="'Courier New', monospace" font-size="9" fill-opacity="0.6">CHEF_NET_LATENCY: 12ms</text>
+
+  <!-- Futuristic Holographic Target Grid -->
+  <circle cx="400" cy="225" r="140" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1" />
+  <circle cx="400" cy="225" r="180" fill="none" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1" stroke-dasharray="5 5" />
+  
+  <!-- Play Button (Glassmorphism + Neon Glow) -->
+  <g transform="translate(400, 225)" cursor="pointer">
+    <!-- Outer Glowing Ring -->
+    <circle r="55" fill="none" stroke="url(#neon-grad)" stroke-width="2" filter="url(#glow-cyan)" opacity="0.7">
+      <animate attributeName="stroke-dasharray" values="100,50;20,130;100,50" dur="5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite" />
+    </circle>
+    <circle r="48" fill="url(#play-grad)" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1" />
+    
+    <!-- Play Triangle -->
+    <polygon points="-10,-18 20,0 -10,18" fill="#ffffff" filter="drop-shadow(0px 0px 8px rgba(0, 242, 254, 0.6))" />
+    
+    <!-- Pulsing effect -->
+    <circle r="48" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1">
+      <animate attributeName="r" values="48;65;48" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="stroke-opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Subtitle banner -->
+  <text x="400" y="380" text-anchor="middle" fill="#ffffff" fill-opacity="0.9" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="16" font-weight="600" letter-spacing="1">GLOBAL CHEF NETWORK & CHALLENGE</text>
+  <text x="400" y="400" text-anchor="middle" fill="#00f2fe" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="11" letter-spacing="3">CONNECTING THE WORLD'S BEST CULINARY MINDS</text>
+</svg>

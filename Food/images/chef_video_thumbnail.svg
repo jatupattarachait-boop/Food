@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-glow" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#1b122c" />
+      <stop offset="100%" stop-color="#08050e" />
+    </radialGradient>
+    <linearGradient id="neon-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bf55ec" />
+      <stop offset="100%" stop-color="#8e44ad" />
+    </linearGradient>
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <linearGradient id="play-btn-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="glow-purple" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-cyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg-glow)" />
+
+  <!-- Dotted pattern -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="0.8" fill="#bf55ec" fill-opacity="0.08" />
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)" />
+
+  <!-- Floating Holographic Cookware Elements -->
+  <!-- Floating Frying Pan in Neon Outline -->
+  <g transform="translate(400, 190)" filter="url(#glow-purple)">
+    <!-- Pan outline -->
+    <path d="M -80 0 C -80 40 80 40 80 0 Z" fill="none" stroke="url(#neon-purple)" stroke-width="3" stroke-linecap="round" />
+    <path d="M -80 0 L 80 0" fill="none" stroke="url(#neon-purple)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6" />
+    <path d="M 80 10 L 150 -15" fill="none" stroke="url(#neon-purple)" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Heat waves / Smoke -->
+    <path d="M -40 -15 Q -30 -40 -20 -15 Q -10 10 0 -30 Q 10 -60 20 -30 Q 30 0 40 -25" fill="none" stroke="url(#neon-cyan)" stroke-width="2" stroke-linecap="round" filter="url(#glow-cyan)">
+      <animate attributeName="stroke-dasharray" values="100;400;100" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M -20 -15 Q -10 -45 0 -20 Q 10 5 20 -40" fill="none" stroke="url(#neon-purple)" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
+      <animate attributeName="stroke-dashoffset" values="0;200;0" dur="4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Heat Telemetry Overlay -->
+    <ellipse cx="0" cy="20" rx="50" ry="10" fill="none" stroke="#00f2fe" stroke-width="1" opacity="0.4" stroke-dasharray="3 5" />
+    <text x="0" y="45" text-anchor="middle" fill="#00f2fe" font-family="'Courier New', monospace" font-size="10" font-weight="bold">PAN_TEMP: 195 C</text>
+  </g>
+
+  <!-- Interactive UI Elements -->
+  <!-- Temperature Indicator Ring -->
+  <g transform="translate(180, 200)" filter="url(#glow-cyan)">
+    <circle r="70" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-opacity="0.1" />
+    <path d="M 0 -70 A 70 70 0 1 1 -50 50" fill="none" stroke="url(#neon-cyan)" stroke-width="3" stroke-linecap="round" />
+    <text x="0" y="-10" text-anchor="middle" fill="#ffffff" font-family="'Courier New', monospace" font-size="14" font-weight="bold">195 C</text>
+    <text x="0" y="12" text-anchor="middle" fill="#00f2fe" font-family="'Courier New', monospace" font-size="9">TARGET TEMP</text>
+    <!-- Pulse -->
+    <circle r="5" cx="-50" cy="50" fill="#ffffff" />
+  </g>
+
+  <!-- Timer & Recipe Telemetry -->
+  <g transform="translate(620, 200)">
+    <circle r="70" fill="none" stroke="#bf55ec" stroke-width="1.5" stroke-opacity="0.1" />
+    <path d="M 0 -70 A 70 70 0 1 1 50 50" fill="none" stroke="url(#neon-purple)" stroke-width="3" stroke-linecap="round" filter="url(#glow-purple)" />
+    <text x="0" y="-10" text-anchor="middle" fill="#ffffff" font-family="'Courier New', monospace" font-size="14" font-weight="bold">02:45</text>
+    <text x="0" y="12" text-anchor="middle" fill="#bf55ec" font-family="'Courier New', monospace" font-size="9">INFUSION TIME</text>
+    <circle r="5" cx="50" cy="50" fill="#ffffff" />
+  </g>
+
+  <!-- Upper UI banner -->
+  <rect x="250" y="25" width="300" height="35" rx="5" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.08" />
+  <text x="400" y="47" text-anchor="middle" fill="#bf55ec" font-family="'Courier New', monospace" font-size="11" font-weight="bold" letter-spacing="1">MASTERCLASS // DIGITAL CHEF ADVICE</text>
+
+  <!-- Play Button (Glassmorphism + Holographic Ring) -->
+  <g transform="translate(400, 200)" cursor="pointer">
+    <circle r="50" fill="url(#play-btn-grad)" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1" />
+    <!-- Glowing Accent Ring -->
+    <circle r="58" fill="none" stroke="url(#neon-cyan)" stroke-width="2" filter="url(#glow-cyan)" stroke-dasharray="120 40">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle r="64" fill="none" stroke="url(#neon-purple)" stroke-width="1" filter="url(#glow-purple)" stroke-dasharray="80 120" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <!-- Play Triangle -->
+    <polygon points="-8,-15 16,0 -8,15" fill="#ffffff" filter="drop-shadow(0 0 5px #00f2fe)" />
+  </g>
+
+  <!-- Main Titles -->
+  <text x="400" y="380" text-anchor="middle" fill="#ffffff" fill-opacity="0.9" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="16" font-weight="600" letter-spacing="1">CHEF'S HOLOGRAPHIC COOKING ADVICE</text>
+  <text x="400" y="400" text-anchor="middle" fill="#00f2fe" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="11" letter-spacing="3" filter="url(#glow-cyan)">LEARN TECHNICAL SECRETS FROM GLOBAL CHEFS</text>
+</svg>

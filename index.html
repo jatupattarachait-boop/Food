@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="th" class="theme-savory">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GastroLab - แกะสูตรอาหารร้านดัง & นวัตกรรมอาหารแห่งอนาคต</title>
+  <meta name="description" content="สัมผัสประสบการณ์แกะสูตรอาหารร้านดังทั่วโลก ค้นพบวัตถุดิบแห่งอนาคต และรับคำแนะนำระดับพรีเมียมจากเชฟชื่อดังในระบบโฮโลแกรม">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;700;900&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS StyleSheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Futuristic Glowing Grid Background -->
+  <div class="stars-bg"></div>
+  <div class="hologram-grid"></div>
+
+  <!-- Header Section -->
+  <header class="app-header">
+    <div class="logo">
+      <i class="fa-solid fa-flask-dotted header-icon"></i>
+      <span class="logo-text">GASTRO<span class="logo-accent">LAB</span></span>
+    </div>
+    
+    <!-- Navigation Tabs -->
+    <nav class="app-nav">
+      <button class="nav-tab active" data-target="home"><i class="fa-solid fa-house"></i> ค้นพบสูตร</button>
+      <button class="nav-tab" data-target="menu-type"><i class="fa-solid fa-utensils"></i> คาว & หวาน</button>
+      <button class="nav-tab" data-target="recipe-creator"><i class="fa-solid fa-wand-magic-sparkles"></i> สร้างสูตรใหม่</button>
+      <button class="nav-tab" data-target="ingredients"><i class="fa-solid fa-seedling"></i> วัตถุดิบล้ำยุค</button>
+      <button class="nav-tab" data-target="chefs"><i class="fa-solid fa-user-tie"></i> คำแนะนำจากเชฟ</button>
+      <button class="nav-tab" data-target="global"><i class="fa-solid fa-earth-americas"></i> เครือข่ายโลก</button>
+    </nav>
+
+    <!-- Theme Morph Switch (Savory vs Sweet) -->
+    <div class="theme-switcher-container">
+      <span class="theme-label savory-lbl"><i class="fa-solid fa-fire"></i> อาหารคาว</span>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="theme-label sweet-lbl"><i class="fa-solid fa-ice-cream"></i> อาหารหวาน</span>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="app-main">
+
+    <!-- TAB 1: HOME (CLONING SHOWCASE) -->
+    <section id="home" class="tab-content active">
+      <div class="hero-section">
+        <h1 class="glow-text">แกะสูตรอาหารลับจากร้านดังทั่วโลก</h1>
+        <p class="subtitle">วิเคราะห์ส่วนผสมทางวิทยาศาสตร์ ถอดรหัสรสชาติ และทำเองได้ง่ายๆ ที่บ้านคุณ</p>
+      </div>
+
+      <div class="cloning-grid">
+        <!-- Recipe Card 1 -->
+        <div class="recipe-card" data-recipe="ramen">
+          <div class="card-image-container">
+            <img src="Food/images/recipe_cloning.png" alt="Ramen Cloning" class="card-img">
+            <span class="clonability-tag"><i class="fa-solid fa-dna"></i> เหมือน 96%</span>
+          </div>
+          <div class="card-body">
+            <h3>ราเมนซุปกระดูกหมูสูตรลับ (Ichiran Style)</h3>
+            <p>ถอดสูตรน้ำซุปทงคัตสึเข้มข้น และซอสแดงเผ็ดร้อนอันเป็นเอกลักษณ์ดั้งเดิม</p>
+            <div class="card-meta">
+              <span><i class="fa-solid fa-clock"></i> 45 นาที</span>
+              <span><i class="fa-solid fa-signal"></i> ระดับ ปานกลาง</span>
+            </div>
+            <button class="btn btn-primary start-cooking-btn"><i class="fa-solid fa-circle-play"></i> เริ่มการทำอาหาร</button>
+          </div>
+        </div>
+
+        <!-- Recipe Card 2 -->
+        <div class="recipe-card" data-recipe="cheesecake">
+          <div class="card-image-container">
+            <img src="Food/images/savory_sweet.png" alt="Sweet Mousse & Steak" class="card-img">
+            <span class="clonability-tag"><i class="fa-solid fa-dna"></i> เหมือน 94%</span>
+          </div>
+          <div class="card-body">
+            <h3>ดับเบิ้ลชีสเค้กสตรอว์เบอร์รี (Pablo Style)</h3>
+            <p>วิเคราะห์อัตราส่วนแป้งและชีสเพื่อเนื้อสัมผัสที่นุ่มละลายในปากเย้ายวนใจ</p>
+            <div class="card-meta">
+              <span><i class="fa-solid fa-clock"></i> 60 นาที</span>
+              <span><i class="fa-solid fa-signal"></i> ระดับ ยาก</span>
+            </div>
+            <button class="btn btn-primary start-cooking-btn"><i class="fa-solid fa-circle-play"></i> เริ่มการทำอาหาร</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Side-by-Side Comparison Section -->
+      <div class="comparison-banner glass-panel">
+        <div class="comp-col">
+          <h4>Original Restaurant Dish</h4>
+          <div class="comp-frame original-frame">
+            <p class="desc">วัตถุดิบลับราคาสูง หาทานยาก ต้องต่อคิวนานกว่า 2 ชั่วโมง</p>
+          </div>
+        </div>
+        <div class="comp-vs">VS</div>
+        <div class="comp-col">
+          <h4>GastroLab Clone Dish</h4>
+          <div class="comp-frame clone-frame">
+            <p class="desc">ปรับสูตรโดยใช้วัตถุดิบทดแทนที่หาซื้อได้ทั่วไป ต้นทุนลดลง 70% รสชาติใกล้เคียงกัน!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: SAVORY & SWEET (คาว & หวาน DUAL ZONE) -->
+    <section id="menu-type" class="tab-content">
+      <div class="tab-header">
+        <h2 class="zone-title">คลังอาหารคาว & อาหารหวานแยกโซน</h2>
+        <p class="zone-desc">สลับปุ่มธีมด้านบนเพื่อเปลี่ยนเข้าสู่โหมดอาหารคาว (ดาร์กธีม) หรืออาหารหวาน (พาสเทลมินิมอล)</p>
+      </div>
+
+      <div class="dual-zone-container">
+        <!-- Savory Zone Cards -->
+        <div class="zone-box savory-zone">
+          <h3 class="zone-header"><i class="fa-solid fa-fire-flame-curry"></i> เมนูอาหารคาวแนะนำ</h3>
+          <div class="recipe-list">
+            <div class="simple-recipe-item glass-panel">
+              <span class="recipe-num">01</span>
+              <div class="recipe-info">
+                <h4>พาสต้าซอสแกงเขียวหวานเนื้อวากิว</h4>
+                <p>รสชาติเข้มข้นของเครื่องแกงไทยผสานเส้นพาสต้าอัลเดนเต้และเนื้อนุ่มระดับพรีเมียม</p>
+              </div>
+            </div>
+            <div class="simple-recipe-item glass-panel">
+              <span class="recipe-num">02</span>
+              <div class="recipe-info">
+                <h4>ซูชิฟิวชันทูน่าครัฟเฟิลซอส</h4>
+                <p>ไข่ปลาคาเวียร์คู่ทูน่าสดสไลด์บางราดซอสทรัฟเฟิลกลิ่นหอมอบอวล</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sweet Zone Cards -->
+        <div class="zone-box sweet-zone">
+          <h3 class="zone-header"><i class="fa-solid fa-cookie-bite"></i> เมนูอาหารหวานแนะนำ</h3>
+          <div class="recipe-list">
+            <div class="simple-recipe-item glass-panel">
+              <span class="recipe-num">03</span>
+              <div class="recipe-info">
+                <h4>ซูเฟล่แพนเค้กซอสยูสุออร์แกนิก</h4>
+                <p>แพนเค้กเนื้อฟูหนานุ่มราดน้ำผึ้งและซอสส้มยูสุกลิ่นเปรี้ยวสดชื่น</p>
+              </div>
+            </div>
+            <div class="simple-recipe-item glass-panel">
+              <span class="recipe-num">04</span>
+              <div class="recipe-info">
+                <h4>มาการองไส้มัทฉะและทรัฟเฟิลดำ</h4>
+                <p>ความหวานมันของตัวแป้งมาการองผสานชาเขียวเข้มข้นและรสสัมผัสหรูหราของทรัฟเฟิล</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: RECIPE CREATOR (WHAT'S IN MY FRIDGE & PORTION SCALER) -->
+    <section id="recipe-creator" class="tab-content">
+      <div class="creator-container">
+        <!-- Fridge Tool -->
+        <div class="fridge-box glass-panel">
+          <h2><i class="fa-solid fa-refrigerator"></i> มีวัตถุดิบอะไรในตู้เย็นบ้าง?</h2>
+          <p>ติ๊กเลือกวัตถุดิบที่คุณมี แล้วระบบ GastroLab จะแนะนำสูตรฟิวชันสุดพิเศษให้ทันที!</p>
+          
+          <div class="ingredient-selector">
+            <label class="ing-checkbox">
+              <input type="checkbox" value="salmon" class="fridge-ing">
+              <span class="ing-btn"><i class="fa-solid fa-fish"></i> แซลมอน</span>
+            </label>
+            <label class="ing-checkbox">
+              <input type="checkbox" value="avocado" class="fridge-ing">
+              <span class="ing-btn"><i class="fa-solid fa-egg"></i> อะโวคาโด</span>
+            </label>
+            <label class="ing-checkbox">
+              <input type="checkbox" value="truffle" class="fridge-ing">
+              <span class="ing-btn"><i class="fa-solid fa-mushroom"></i> เห็ดทรัฟเฟิล</span>
+            </label>
+            <label class="ing-checkbox">
+              <input type="checkbox" value="chocolate" class="fridge-ing">
+              <span class="ing-btn"><i class="fa-solid fa-candy-bar"></i> ช็อกโกแลต</span>
+            </label>
+            <label class="ing-checkbox">
+              <input type="checkbox" value="strawberry" class="fridge-ing">
+              <span class="ing-btn"><i class="fa-solid fa-strawberry"></i> สตรอว์เบอร์รี</span>
+            </label>
+          </div>
+
+          <div class="fridge-results" id="fridge-results">
+            <p class="placeholder-text"><i class="fa-solid fa-search"></i> เลือกวัตถุดิบเพื่อประมวลผลสูตรฟิวชัน...</p>
+          </div>
+        </div>
+
+        <!-- Recipe Scaler / Creator Form -->
+        <div class="scaler-box glass-panel">
+          <h2><i class="fa-solid fa-sliders"></i> เครื่องสเกลสัดส่วนสูตรอาหารอัจฉริยะ</h2>
+          <p>ปรับขนาดเสิร์ฟเพื่อคำนวณสัดส่วนวัตถุดิบโดยอัตโนมัติด้วยระบบแม่นยำ</p>
+
+          <div class="scaler-control">
+            <label for="portion-slider">จำนวนเสิร์ฟ (Portions): <span id="portion-val" class="neon-number">2</span> เสิร์ฟ</label>
+            <input type="range" id="portion-slider" min="1" max="10" value="2" class="range-slider">
+          </div>
+
+          <div class="scaler-recipe-preview">
+            <h4 class="recipe-preview-title">สูตรแนะนำ: แซลมอนย่างทรัฟเฟิลครีมซอส</h4>
+            <ul class="ingredient-list" id="scaler-ingredients">
+              <li data-base="150" data-unit="กรัม">แซลมอนสด: <span class="ing-qty">300</span> กรัม</li>
+              <li data-base="15" data-unit="กรัม">เนยสดแท้: <span class="ing-qty">30</span> กรัม</li>
+              <li data-base="1" data-unit="ช้อนโต๊ะ">ซอสทรัฟเฟิล: <span class="ing-qty">2</span> ช้อนโต๊ะ</li>
+              <li data-base="50" data-unit="มิลลิลิตร">เฮฟวี่ครีม: <span class="ing-qty">100</span> มิลลิลิตร</li>
+              <li data-base="0.5" data-unit="ผล">อะโวคาโดบด: <span class="ing-qty">1</span> ผล</li>
+            </ul>
+          </div>
+          
+          <div class="recipe-builder-mockup">
+            <img src="Food/images/recipe_builder.png" alt="Recipe Builder" class="mockup-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: FUTURE INGREDIENTS -->
+    <section id="ingredients" class="tab-content">
+      <div class="tab-header">
+        <h2 class="glow-text">คลังวัตถุดิบแห่งอนาคต (Next-Gen Ingredients)</h2>
+        <p class="subtitle">นวัตกรรมแห่งอาหารเพื่อความยั่งยืนและการสร้างสรรค์สิ่งใหม่</p>
+      </div>
+
+      <div class="ingredients-container">
+        <div class="ing-showcase-box glass-panel">
+          <img src="Food/images/ingredients_showcase.svg" alt="Sustainable Ingredients Laboratory" class="hologram-svg">
+        </div>
+        
+        <div class="ing-details-grid">
+          <div class="ing-spec-card glass-panel">
+            <h4><i class="fa-solid fa-dna"></i> สปอร์เรืองแสง Eco-Bio Synth</h4>
+            <p>พืชสมุนไพรและสาหร่ายเซลล์เดี่ยวเพาะเลี้ยงในห้องแล็บที่ให้รสชาติอูมามิสูงและเป็นมิตรกับสิ่งแวดล้อม 100%</p>
+            <div class="telemetry-bar">
+              <span>คาร์บอนฟุตพริ้นท์: -12%</span>
+              <span>ประหยัดน้ำ: 85 ลิตร</span>
+            </div>
+          </div>
+
+          <div class="ing-spec-card glass-panel">
+            <h4><i class="fa-solid fa-leaf"></i> Edible Microgreens (โฮโลแกรมสแกน)</h4>
+            <p>ผักสมุนไพรขนาดจิ๋วที่ผ่านการควบคุมสเปกตรัมแสงเพื่อให้ได้รสสัมผัสและกลิ่นหอมแรงขึ้น 40%</p>
+            <div class="telemetry-bar">
+              <span>อัตราความสมบูรณ์: 99.8%</span>
+              <span>อุณหภูมิโต: 18.4°C</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: CHEF ADVICE (MASTERCLASS & VIDEO TELEMETRY) -->
+    <section id="chefs" class="tab-content">
+      <div class="tab-header">
+        <h2 class="glow-text">บทเรียนและคำแนะนำจากเชฟชั้นนำระดับโลก</h2>
+        <p class="subtitle">เรียนรู้เทคนิคการปรุงอาหารในระดับวิทยาศาสตร์และศิลปะขั้นสูง</p>
+      </div>
+
+      <div class="video-section-container">
+        <!-- Interactive Video Player Cover -->
+        <div class="video-player-wrapper glass-panel">
+          <div class="svg-video-container" id="chef-video-trigger">
+            <object data="Food/images/chef_video_thumbnail.svg" type="image/svg+xml" class="interactive-svg-obj" id="chef-svg-obj"></object>
+            <div class="video-overlay-click"></div>
+          </div>
+          <span class="video-helper-tag"><i class="fa-solid fa-circle-info"></i> คลิกที่ปุ่ม Play เพื่อรันวิดีโอสัมภาษณ์และระบบควบคุมความร้อนจำลอง</span>
+        </div>
+
+        <!-- Telemetry Details Panel -->
+        <div class="telemetry-panel glass-panel" id="telemetry-display">
+          <h3><i class="fa-solid fa-chart-line"></i> ฟีดข้อมูลการวิเคราะห์แบบเรียลไทม์ (LIVE TELEMETRY)</h3>
+          <div class="telemetry-grid">
+            <div class="t-card">
+              <span class="t-label">ความร้อนกระทะ</span>
+              <span class="t-value" id="t-heat">-- °C</span>
+            </div>
+            <div class="t-card">
+              <span class="t-label">ความเสถียรของอุณหภูมิ</span>
+              <span class="t-value" id="t-stable">-- %</span>
+            </div>
+            <div class="t-card">
+              <span class="t-label">เวลาต้ม/เคี่ยวสะสม</span>
+              <span class="t-value" id="t-timer">00:00</span>
+            </div>
+          </div>
+          <div class="telemetry-log">
+            <p class="log-line">> รันโหมดการคำนวณความร้อนและเทคนิคพิเศษของเชฟ...</p>
+            <p class="log-line" id="log-status">> ระบบสแตนด์บาย รอกดเริ่มวิดีโอ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: GLOBAL NETWORK -->
+    <section id="global" class="tab-content">
+      <div class="tab-header">
+        <h2 class="glow-text">เครือข่ายเชฟและผู้รักการทำอาหารระดับโลก</h2>
+        <p class="subtitle">แลกเปลี่ยนข้อมูล ท้าทายความสามารถ และโชว์ผลงานสูตรแกะของคุณสู่สากล</p>
+      </div>
+
+      <div class="global-wrapper">
+        <div class="map-box glass-panel">
+          <object data="Food/images/global_network_vdo.svg" type="image/svg+xml" class="interactive-svg-obj"></object>
+        </div>
+
+        <div class="challenge-box glass-panel">
+          <h3><i class="fa-solid fa-trophy text-gold"></i> การแข่งขันประจำสัปดาห์</h3>
+          <p>ทำอาหารคาว/หวานจากสูตรแกะกล่องของ GastroLab แล้วส่งภาพถ่ายหรือคลิปสั้นของคุณเพื่อประกวดรับใบรับรองระดับเชฟ</p>
+          
+          <form class="challenge-form" id="challenge-form">
+            <div class="form-group">
+              <label for="c-name">ชื่อของคุณ (Name)</label>
+              <input type="text" id="c-name" placeholder="ระบุชื่อจริงหรือนามแฝง" required>
+            </div>
+            <div class="form-group">
+              <label for="c-recipe">เลือกเมนูที่ใช้สมัคร</label>
+              <select id="c-recipe">
+                <option value="ramen">ราเมนซุปกระดูกหมู (Ichiran Style)</option>
+                <option value="cheesecake">ชีสเค้กสตรอว์เบอร์รี (Pablo Style)</option>
+                <option value="fusion">สูตรฟิวชันจากตู้เย็นของคุณ</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-secondary"><i class="fa-solid fa-paper-plane"></i> ยื่นใบสมัครประกวด</button>
+          </form>
+          <div class="form-feedback" id="form-feedback"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- INTERACTIVE COOKING MODAL (STEP-BY-STEP DIALOG) -->
+  <div class="modal" id="cooking-modal">
+    <div class="modal-content glass-panel">
+      <div class="modal-header">
+        <h2 id="modal-recipe-title">ขั้นตอนการทำอาหาร</h2>
+        <button class="close-btn" id="close-modal-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="cooking-progress" style="width: 0%"></div>
+        </div>
+        
+        <div class="step-content" id="step-content">
+          <h3 id="step-title">ขั้นตอนที่ 1</h3>
+          <p id="step-description">คำอธิบายขั้นตอนที่นี่...</p>
+          
+          <!-- Step Timer -->
+          <div class="step-timer-box" id="step-timer-box">
+            <span class="timer-countdown" id="timer-display">05:00</span>
+            <button class="btn btn-timer" id="timer-control-btn"><i class="fa-solid fa-play"></i> เริ่มจับเวลา</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-neutral" id="prev-step-btn" disabled><i class="fa-solid fa-chevron-left"></i> ย้อนกลับ</button>
+        <button class="btn btn-primary" id="next-step-btn">เข้าใจแล้ว ขั้นต่อไป <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 GastroLab - Future Culinary Systems. Powered by Antigravity Design System.</p>
+  </footer>
+
+  <!-- JS Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
