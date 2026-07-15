@@ -58,40 +58,43 @@
         <p class="subtitle">วิเคราะห์ส่วนผสมทางวิทยาศาสตร์ ถอดรหัสรสชาติ และทำเองได้ง่ายๆ ที่บ้านคุณ</p>
       </div>
 
-      <div class="cloning-grid">
-        <!-- Recipe Card 1 -->
-        <div class="recipe-card" data-recipe="ramen">
-          <div class="card-image-container">
-            <img src="Food/images/recipe_cloning.png" alt="Ramen Cloning" class="card-img">
-            <span class="clonability-tag"><i class="fa-solid fa-dna"></i> เหมือน 96%</span>
-          </div>
-          <div class="card-body">
-            <h3>ราเมนซุปกระดูกหมูสูตรลับ (Ichiran Style)</h3>
-            <p>ถอดสูตรน้ำซุปทงคัตสึเข้มข้น และซอสแดงเผ็ดร้อนอันเป็นเอกลักษณ์ดั้งเดิม</p>
-            <div class="card-meta">
-              <span><i class="fa-solid fa-clock"></i> 45 นาที</span>
-              <span><i class="fa-solid fa-signal"></i> ระดับ ปานกลาง</span>
-            </div>
-            <button class="btn btn-primary start-cooking-btn"><i class="fa-solid fa-circle-play"></i> เริ่มการทำอาหาร</button>
-          </div>
+      <!-- Search & Filter System Section -->
+      <div class="search-filter-section glass-panel">
+        <div class="search-bar-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-bar-icon"></i>
+          <input type="text" id="search-input" placeholder="ค้นหาชื่อเมนู, วัตถุดิบ, หรือร้านอาหารต้นฉบับ..." aria-label="ค้นหาเมนูอาหาร">
+          <button id="search-clear-btn" class="search-clear-btn" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="trending-searches">
+          <span class="trending-label"><i class="fa-solid fa-arrow-trend-up"></i> คำค้นหายอดฮิต:</span>
+          <button class="trend-tag">กะเพรา</button>
+          <button class="trend-tag">ราเมง</button>
+          <button class="trend-tag">ฮันนี่โทสต์</button>
+          <button class="trend-tag">ชาไทย</button>
+          <button class="trend-tag">บราวนี่</button>
         </div>
 
-        <!-- Recipe Card 2 -->
-        <div class="recipe-card" data-recipe="cheesecake">
-          <div class="card-image-container">
-            <img src="Food/images/savory_sweet.png" alt="Sweet Mousse & Steak" class="card-img">
-            <span class="clonability-tag"><i class="fa-solid fa-dna"></i> เหมือน 94%</span>
-          </div>
-          <div class="card-body">
-            <h3>ดับเบิ้ลชีสเค้กสตรอว์เบอร์รี (Pablo Style)</h3>
-            <p>วิเคราะห์อัตราส่วนแป้งและชีสเพื่อเนื้อสัมผัสที่นุ่มละลายในปากเย้ายวนใจ</p>
-            <div class="card-meta">
-              <span><i class="fa-solid fa-clock"></i> 60 นาที</span>
-              <span><i class="fa-solid fa-signal"></i> ระดับ ยาก</span>
-            </div>
-            <button class="btn btn-primary start-cooking-btn"><i class="fa-solid fa-circle-play"></i> เริ่มการทำอาหาร</button>
+        <div class="filter-section-wrapper">
+          <span class="filter-section-label"><i class="fa-solid fa-sliders"></i> ตัวกรองสูตรอาหาร:</span>
+          <div class="filter-chips-container">
+            <button class="filter-chip" data-filter="อาหารไทย"><i class="fa-solid fa-bowl-food"></i> อาหารไทย</button>
+            <button class="filter-chip" data-filter="อาหารต่างประเทศ"><i class="fa-solid fa-globe"></i> อาหารต่างประเทศ</button>
+            <button class="filter-chip" data-filter="อาหารคาว"><i class="fa-solid fa-drumstick-bite"></i> อาหารคาว</button>
+            <button class="filter-chip" data-filter="ของหวาน"><i class="fa-solid fa-ice-cream"></i> ของหวาน</button>
+            <button class="filter-chip" data-filter="เครื่องดื่ม"><i class="fa-solid fa-glass-water"></i> เครื่องดื่ม</button>
+            <button class="filter-chip" data-filter="เมนูสุขภาพ"><i class="fa-solid fa-heart-pulse"></i> เมนูสุขภาพ</button>
+            <button class="filter-chip" data-filter="มังสวิรัติ"><i class="fa-solid fa-carrot"></i> มังสวิรัติ</button>
+            <button class="filter-chip" data-filter="วีแกน"><i class="fa-solid fa-leaf"></i> วีแกน</button>
+            <button class="filter-chip" data-filter="แคลอรี่ต่ำ"><i class="fa-solid fa-scale-balanced"></i> แคลอรี่ต่ำ</button>
+            <button class="filter-chip" data-filter="ทำง่าย"><i class="fa-solid fa-wand-magic-sparkles"></i> ทำง่าย</button>
+            <button class="filter-chip" data-filter="ใช้เวลาน้อยกว่า 30 นาที"><i class="fa-solid fa-clock"></i> &lt; 30 นาที</button>
           </div>
         </div>
+      </div>
+
+      <div class="cloning-grid" id="recipes-grid">
+        <!-- RENDERED DYNAMICALLY VIA JAVASCRIPT -->
       </div>
       
       <!-- Side-by-Side Comparison Section -->
@@ -123,42 +126,16 @@
         <!-- Savory Zone Cards -->
         <div class="zone-box savory-zone">
           <h3 class="zone-header"><i class="fa-solid fa-fire-flame-curry"></i> เมนูอาหารคาวแนะนำ</h3>
-          <div class="recipe-list">
-            <div class="simple-recipe-item glass-panel">
-              <span class="recipe-num">01</span>
-              <div class="recipe-info">
-                <h4>พาสต้าซอสแกงเขียวหวานเนื้อวากิว</h4>
-                <p>รสชาติเข้มข้นของเครื่องแกงไทยผสานเส้นพาสต้าอัลเดนเต้และเนื้อนุ่มระดับพรีเมียม</p>
-              </div>
-            </div>
-            <div class="simple-recipe-item glass-panel">
-              <span class="recipe-num">02</span>
-              <div class="recipe-info">
-                <h4>ซูชิฟิวชันทูน่าครัฟเฟิลซอส</h4>
-                <p>ไข่ปลาคาเวียร์คู่ทูน่าสดสไลด์บางราดซอสทรัฟเฟิลกลิ่นหอมอบอวล</p>
-              </div>
-            </div>
+          <div class="recipe-list" id="savory-recipes-list">
+            <!-- Rendered Dynamically -->
           </div>
         </div>
 
         <!-- Sweet Zone Cards -->
         <div class="zone-box sweet-zone">
           <h3 class="zone-header"><i class="fa-solid fa-cookie-bite"></i> เมนูอาหารหวานแนะนำ</h3>
-          <div class="recipe-list">
-            <div class="simple-recipe-item glass-panel">
-              <span class="recipe-num">03</span>
-              <div class="recipe-info">
-                <h4>ซูเฟล่แพนเค้กซอสยูสุออร์แกนิก</h4>
-                <p>แพนเค้กเนื้อฟูหนานุ่มราดน้ำผึ้งและซอสส้มยูสุกลิ่นเปรี้ยวสดชื่น</p>
-              </div>
-            </div>
-            <div class="simple-recipe-item glass-panel">
-              <span class="recipe-num">04</span>
-              <div class="recipe-info">
-                <h4>มาการองไส้มัทฉะและทรัฟเฟิลดำ</h4>
-                <p>ความหวานมันของตัวแป้งมาการองผสานชาเขียวเข้มข้นและรสสัมผัสหรูหราของทรัฟเฟิล</p>
-              </div>
-            </div>
+          <div class="recipe-list" id="sweet-recipes-list">
+            <!-- Rendered Dynamically -->
           </div>
         </div>
       </div>
@@ -342,33 +319,106 @@
 
   </main>
 
-  <!-- INTERACTIVE COOKING MODAL (STEP-BY-STEP DIALOG) -->
+  <!-- INTERACTIVE DUAL-MODE MODAL (RECIPE DETAIL + STEP-BY-STEP COOKING) -->
   <div class="modal" id="cooking-modal">
     <div class="modal-content glass-panel">
-      <div class="modal-header">
-        <h2 id="modal-recipe-title">ขั้นตอนการทำอาหาร</h2>
-        <button class="close-btn" id="close-modal-btn">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="progress-bar-container">
-          <div class="progress-bar-fill" id="cooking-progress" style="width: 0%"></div>
+      
+      <!-- VIEW 1: RECIPE DETAIL VIEW -->
+      <div id="recipe-detail-view">
+        <div class="modal-header">
+          <div class="detail-header-text">
+            <span class="clonability-badge" id="detail-clonability"><i class="fa-solid fa-dna"></i> 95%</span>
+            <h2 id="detail-recipe-title">ชื่อเมนูอาหาร</h2>
+            <p id="detail-recipe-subtitle" class="detail-recipe-subtitle">ร้านอาหารต้นฉบับ</p>
+          </div>
+          <button class="close-btn close-modal-btn" aria-label="Close modal">&times;</button>
         </div>
-        
-        <div class="step-content" id="step-content">
-          <h3 id="step-title">ขั้นตอนที่ 1</h3>
-          <p id="step-description">คำอธิบายขั้นตอนที่นี่...</p>
+        <div class="modal-body scrollable-modal-body">
+          <div class="detail-hero-image">
+            <img id="detail-recipe-image" src="" alt="Recipe image" class="detail-img">
+          </div>
           
-          <!-- Step Timer -->
-          <div class="step-timer-box" id="step-timer-box">
-            <span class="timer-countdown" id="timer-display">05:00</span>
-            <button class="btn btn-timer" id="timer-control-btn"><i class="fa-solid fa-play"></i> เริ่มจับเวลา</button>
+          <div class="recipe-meta-grid">
+            <div class="meta-item">
+              <i class="fa-solid fa-clock"></i>
+              <span class="meta-label">เวลาที่ใช้</span>
+              <strong id="detail-time">-- นาที</strong>
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-fire-flame-simple"></i>
+              <span class="meta-label">พลังงาน</span>
+              <strong id="detail-calories">-- kcal</strong>
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-signal"></i>
+              <span class="meta-label">ความยาก</span>
+              <strong id="detail-difficulty">--</strong>
+            </div>
+          </div>
+
+          <!-- Dynamic Portion Calculator -->
+          <div class="portion-calculator-container">
+            <label class="portion-label">
+              <i class="fa-solid fa-utensils"></i> จำนวนเสิร์ฟ (Portions)
+            </label>
+            <div class="portion-controls">
+              <button class="portion-btn" id="portion-btn-minus" type="button"><i class="fa-solid fa-minus"></i></button>
+              <input type="number" id="detail-portion-input" value="2" min="1" max="20" class="portion-input" aria-label="Portion size">
+              <button class="portion-btn" id="portion-btn-plus" type="button"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+
+          <!-- Ingredients List -->
+          <div class="ingredients-list-section">
+            <h3><i class="fa-solid fa-list-check"></i> วัตถุดิบและสัดส่วน (Ingredients)</h3>
+            <ul class="detail-ingredients-list" id="detail-ingredients-list">
+              <!-- Rendered Dynamically -->
+            </ul>
+          </div>
+
+          <!-- Chef Tips -->
+          <div class="chef-tips-box" id="detail-chef-tips-box">
+            <h4><i class="fa-solid fa-user-astronaut"></i> Chef's Pro-Tips</h4>
+            <p id="detail-chef-tips">เคล็ดลับของเชฟ...</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-neutral close-modal-btn">ปิดหน้าต่าง</button>
+          <button class="btn btn-primary" id="start-cooking-wizard-btn">เริ่มการทำอาหาร <i class="fa-solid fa-fire"></i></button>
+        </div>
+      </div>
+
+      <!-- VIEW 2: COOKING STEPS WIZARD VIEW -->
+      <div id="cooking-steps-view" style="display: none;">
+        <div class="modal-header">
+          <h2 id="modal-recipe-title">ขั้นตอนการทำอาหาร</h2>
+          <button class="close-btn close-modal-btn" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="cooking-progress" style="width: 0%"></div>
+          </div>
+          
+          <div class="step-content" id="step-content">
+            <h3 id="step-title">ขั้นตอนที่ 1</h3>
+            <p id="step-description">คำอธิบายขั้นตอนที่นี่...</p>
+            
+            <!-- Step Timer -->
+            <div class="step-timer-box" id="step-timer-box">
+              <span class="timer-countdown" id="timer-display">05:00</span>
+              <button class="btn btn-timer" id="timer-control-btn"><i class="fa-solid fa-play"></i> เริ่มจับเวลา</button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-neutral" id="back-to-detail-btn"><i class="fa-solid fa-chevron-left"></i> รายละเอียด</button>
+          <div class="wizard-nav-buttons">
+            <button class="btn btn-neutral" id="prev-step-btn" disabled><i class="fa-solid fa-chevron-left"></i> ย้อนกลับ</button>
+            <button class="btn btn-primary" id="next-step-btn">เข้าใจแล้ว ขั้นต่อไป <i class="fa-solid fa-chevron-right"></i></button>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-neutral" id="prev-step-btn" disabled><i class="fa-solid fa-chevron-left"></i> ย้อนกลับ</button>
-        <button class="btn btn-primary" id="next-step-btn">เข้าใจแล้ว ขั้นต่อไป <i class="fa-solid fa-chevron-right"></i></button>
-      </div>
+
     </div>
   </div>
 

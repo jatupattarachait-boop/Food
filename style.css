@@ -1212,3 +1212,517 @@ input:checked + .slider:before {
     grid-template-columns: 1fr;
   }
 }
+
+/* -------------------------------------------------------------
+   8. SEARCH & FILTER INTERFACE STYLES
+   ------------------------------------------------------------- */
+.search-filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  padding: 1.8rem;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar-icon {
+  position: absolute;
+  left: 1.2rem;
+  font-size: 1.2rem;
+  color: var(--accent-glow);
+  text-shadow: var(--glow-effect);
+}
+
+.search-bar-wrapper input {
+  width: 100%;
+  padding: 0.9rem 1.2rem 0.9rem 3.2rem;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar-wrapper input:focus {
+  border-color: var(--accent-glow);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+}
+
+.theme-sweet .search-bar-wrapper input:focus {
+  box-shadow: 0 0 15px rgba(255, 87, 127, 0.25);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 1.2rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-clear-btn:hover {
+  color: var(--text-primary);
+}
+
+/* Trending Searches */
+.trending-searches {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  margin-top: -0.2rem;
+}
+
+.trending-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.trend-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.theme-sweet .trend-tag {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.trend-tag:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-glow);
+  background: rgba(0, 242, 254, 0.05);
+}
+
+.theme-sweet .trend-tag:hover {
+  background: rgba(255, 87, 127, 0.05);
+}
+
+/* Filter Chips Container */
+.filter-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.filter-section-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.filter-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.filter-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-sweet .filter-chip {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.filter-chip:hover {
+  color: var(--text-primary);
+  border-color: var(--border-color-hover);
+  transform: translateY(-1px);
+}
+
+.filter-chip.active {
+  background: var(--accent-glow);
+  border-color: var(--accent-glow);
+  color: #ffffff;
+  box-shadow: var(--glow-effect);
+}
+
+/* -------------------------------------------------------------
+   9. RECIPE DETAIL PANEL STYLES
+   ------------------------------------------------------------- */
+#recipe-detail-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.detail-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.detail-header-text h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-top: 0.2rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.detail-recipe-subtitle {
+  font-size: 0.85rem;
+  color: var(--accent-glow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.clonability-badge {
+  background: rgba(0, 242, 254, 0.1);
+  border: 1px solid var(--accent-glow);
+  color: var(--accent-glow);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: fit-content;
+}
+
+.theme-sweet .clonability-badge {
+  background: rgba(255, 87, 127, 0.1);
+}
+
+/* Scrollable Modal Body */
+.scrollable-modal-body {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 0.8rem;
+  margin: 1rem 0;
+}
+
+/* Scrollbar styling for modal */
+.scrollable-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable-modal-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 3px;
+}
+
+.scrollable-modal-body::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.scrollable-modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-glow);
+}
+
+.detail-hero-image {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.detail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Meta info grid */
+.recipe-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.theme-sweet .meta-item {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.meta-item i {
+  color: var(--accent-glow);
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.meta-item strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Portion Calculator inside modal */
+.portion-calculator-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-sweet .portion-calculator-container {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.portion-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portion-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portion-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.theme-sweet .portion-btn {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.portion-btn:hover {
+  background: var(--accent-glow);
+  color: #ffffff;
+  border-color: var(--accent-glow);
+  box-shadow: var(--glow-effect);
+}
+
+.portion-input {
+  width: 45px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+.portion-input::-webkit-outer-spin-button,
+.portion-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Ingredients Section inside modal */
+.ingredients-list-section {
+  margin-bottom: 1.5rem;
+}
+
+.ingredients-list-section h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: var(--accent-glow);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.detail-ingredients-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.detail-ingredients-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.theme-sweet .detail-ingredients-list li {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(0, 0, 0, 0.03);
+}
+
+.detail-ingredients-list li:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-color);
+}
+
+.ing-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.ing-checkbox-label input {
+  display: none;
+}
+
+.ing-custom-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+
+.ing-checkbox-label input:checked + .ing-custom-checkbox {
+  background: var(--accent-glow);
+  border-color: var(--accent-glow);
+  color: #ffffff;
+  box-shadow: var(--glow-effect);
+}
+
+.ing-checkbox-label input:checked + .ing-custom-checkbox::after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.ing-checkbox-label input:checked ~ .ing-name {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.ing-qty-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.ing-checkbox-label input:checked ~ .ing-qty-display {
+  opacity: 0.6;
+}
+
+/* Chef Tips box inside modal */
+.chef-tips-box {
+  background: rgba(248, 87, 166, 0.05);
+  border: 1px solid rgba(248, 87, 166, 0.2);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.theme-sweet .chef-tips-box {
+  background: rgba(255, 87, 127, 0.05);
+  border-color: rgba(255, 87, 127, 0.2);
+}
+
+.chef-tips-box h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: #f857a6;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.theme-sweet .chef-tips-box h4 {
+  color: #ff577f;
+}
+
+.chef-tips-box p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.wizard-nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
